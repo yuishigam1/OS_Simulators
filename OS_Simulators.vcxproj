@@ -118,12 +118,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Index.cpp" />
+    <ClCompile Include="sjf.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="Index.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="sjf.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Index.resx">
+      <DependentUpon>Index.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sjf.resx">
+      <DependentUpon>sjf.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
