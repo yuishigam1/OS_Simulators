@@ -39,6 +39,7 @@ namespace OSSimulators {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+
 	protected:
 
 	private:
@@ -54,6 +55,7 @@ namespace OSSimulators {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Index::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -62,52 +64,82 @@ namespace OSSimulators {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(9, 12);
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->button1->FlatAppearance->BorderSize = 2;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Lucida Calligraphy", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Gold;
+			this->button1->Location = System::Drawing::Point(9, 46);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(665, 66);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Shortest Job First (SJF) scheduling algorithm ";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Index::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(9, 112);
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Lucida Calligraphy", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::Color::Gold;
+			this->button2->Location = System::Drawing::Point(9, 143);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(665, 64);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Dining philosophers’ problem with semaphore";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(9, 213);
+			this->button3->BackColor = System::Drawing::Color::Transparent;
+			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Lucida Calligraphy", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button3->ForeColor = System::Drawing::Color::Gold;
+			this->button3->Location = System::Drawing::Point(9, 236);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(665, 64);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"C-Look disk scheduling algorithm ";
-			this->button3->UseVisualStyleBackColor = true;
+			this->button3->UseVisualStyleBackColor = false;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(9, 312);
+			this->button4->BackColor = System::Drawing::Color::Transparent;
+			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Lucida Calligraphy", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button4->ForeColor = System::Drawing::Color::Gold;
+			this->button4->Location = System::Drawing::Point(9, 320);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(665, 64);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"First-in first-out (FIFO) page replacement algorithm";
-			this->button4->UseVisualStyleBackColor = true;
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &Index::button4_Click);
 			// 
 			// Index
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(686, 408);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"Index";
-			this->Text = L"Index";
+			this->Text = L"OS Simulator";
 			this->ResumeLayout(false);
 
 		}
@@ -117,5 +149,11 @@ namespace OSSimulators {
 
 		sjf_form->Show();
 	}
-	};
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+		this->textBox1->Size = System::Drawing::Size(665, 66);
+	}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
