@@ -21,12 +21,21 @@
     <ClCompile Include="sjf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GanttChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Index.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sjf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SjfComponents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GanttChart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

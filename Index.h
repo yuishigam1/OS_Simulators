@@ -39,6 +39,7 @@ namespace OSSimulators {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	sjf^ sjf_form = gcnew sjf();
 
 	protected:
 
@@ -46,7 +47,7 @@ namespace OSSimulators {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -124,7 +125,6 @@ namespace OSSimulators {
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"First-in first-out (FIFO) page replacement algorithm";
 			this->button4->UseVisualStyleBackColor = false;
-			this->button4->Click += gcnew System::EventHandler(this, &Index::button4_Click);
 			// 
 			// Index
 			// 
@@ -145,15 +145,11 @@ namespace OSSimulators {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		sjf^ sjf_form = gcnew sjf();
 
-		sjf_form->Show();
-	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (!sjf_form->Visible) {
 
-		this->textBox1->Size = System::Drawing::Size(665, 66);
+			sjf_form->Show();
+		}
 	}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	};
 }
