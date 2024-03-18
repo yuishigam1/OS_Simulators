@@ -1,3 +1,6 @@
+#include "SjfComponents.h"
+#include <iostream>
+
 #pragma once
 
 namespace OSSimulators {
@@ -15,8 +18,17 @@ namespace OSSimulators {
 	public ref class GanttChart : public System::Windows::Forms::Form
 	{
 	public:
+		SjfComponents^ sjf_components;
 		GanttChart(void)
 		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+		GanttChart(SjfComponents^ obj)
+		{
+			this->sjf_components = obj;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -34,11 +46,48 @@ namespace OSSimulators {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
-	protected:
 
 	protected:
 
+	protected:
+		virtual void OnPaint(PaintEventArgs^ e) override
+		{
+			Graphics^ g = e->Graphics;
+			Pen^ pen = gcnew Pen(Color::Black);
+
+			sjf_components->sort();
+			int startY = 50; // Initial Y position of the tasks
+			int height = 50; // Height of each task
+			int preX = 50;
+			// Draw tasks
+			g->DrawString(Convert::ToString(sjf_components->arrivalTime[0]), gcnew Drawing::Font("Arial", 10), Brushes::Black, 45, startY + height + 10);
+			for(int i = 0; i < sjf_components->size; i++)
+			{
+				String^ name = sjf_components->processName[i];
+				int startX = preX;
+				int endX = startX + sjf_components->burstTime[i] * 10;
+				int width = endX - startX;
+
+
+				Drawing::Rectangle rect(startX, startY, width, height);
+				g->DrawRectangle(pen, rect);
+				g->DrawLine(pen, startX, startY + height, startX, startY + height + 10); // Start line
+				g->DrawLine(pen, endX, startY + height, endX, startY + height + 10); // End line
+
+				// Draw task name
+				g->DrawString(name, gcnew Drawing::Font("Arial", 10), Brushes::Black, startX + 5, startY + 5);
+				if (Convert::ToString(sjf_components->completionTime[i])->Length == 1) {
+
+					g->DrawString(Convert::ToString(sjf_components->completionTime[i]), gcnew Drawing::Font("Arial", 10), Brushes::Black, endX - 5, startY + height + 10);
+				}
+				else
+				{
+					g->DrawString(Convert::ToString(sjf_components->completionTime[i]), gcnew Drawing::Font("Arial", 10), Brushes::Black, endX - 10, startY + height + 10);
+				}
+
+				preX = endX;
+			}
+		}
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -52,48 +101,23 @@ namespace OSSimulators {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// chart1
-			// 
-			this->chart1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
-			legend1->Name = L"Legend1";
-			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(12, 12);
-			this->chart1->Name = L"chart1";
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Bar;
-			series1->Legend = L"Legend1";
-			series1->Name = L"Ganttchart";
-			series1->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Int32;
-			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(619, 300);
-			this->chart1->TabIndex = 0;
-			this->chart1->Text = L"chart1";
 			// 
 			// GanttChart
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(643, 334);
-			this->Controls->Add(this->chart1);
 			this->Name = L"GanttChart";
 			this->Text = L"GanttChart";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
+			this->Load += gcnew System::EventHandler(this, &GanttChart::GanttChart_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+	private: System::Void GanttChart_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->Invalidate();
 	}
 	};
 

@@ -3,6 +3,7 @@
 #include "SjfComponents.h"
 #include <vector>
 #include "GanttChart.h"
+#include <msclr/marshal.h>
 
 namespace OSSimulators {
 
@@ -12,6 +13,7 @@ namespace OSSimulators {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace msclr::interop;
 
 	/// <summary>
 	/// Summary for sjf
@@ -39,7 +41,7 @@ namespace OSSimulators {
 			}
 		}
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	GanttChart^ gantt_chart_window = gcnew GanttChart();
+		   GanttChart^ gantt_chart_window;
 
 
 
@@ -192,8 +194,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 	if (dataGridView1->RowCount > 1) {
 		//create object of sjfComponent class
-		SjfComponents* sjf_components = new SjfComponents(dataGridView1->RowCount - 1);
- 
+		SjfComponents^ sjf_components = gcnew SjfComponents(dataGridView1->RowCount - 1);
+		
+		sjf_components->processName[0] = Convert::ToString(dataGridView1->Rows[0]->Cells[0]->Value);
 		sjf_components->arrivalTime[0] = Convert::ToInt32(dataGridView1->Rows[0]->Cells[1]->Value);
 		sjf_components->burstTime[0] = Convert::ToInt32(dataGridView1->Rows[0]->Cells[2]->Value);
 		int pWithMinArrivalTime = 0;
@@ -201,6 +204,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		std::vector<int> p_queue;
 
 		for (int i = 1; i < dataGridView1->RowCount - 1; i++) {
+
+			//Getting Process Name
+			sjf_components->processName[i] = Convert::ToString(dataGridView1->Rows[i]->Cells[0]->Value);
 
 			// Getting Arrival Time
 			sjf_components->arrivalTime[i] = Convert::ToInt32(dataGridView1->Rows[i]->Cells[1]->Value);
@@ -257,9 +263,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			}
 		}
 
-		if (!gantt_chart_window->Visible) { 
-			gantt_chart_window->Show();
-		}
+		
+		gantt_chart_window = gcnew GanttChart(sjf_components);
+		gantt_chart_window->Show();
 
 	}
 	else {
