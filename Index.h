@@ -1,5 +1,6 @@
 #pragma once
 #include "sjf.h"
+#include "dpp.h"
 
 namespace OSSimulators {
 
@@ -43,6 +44,7 @@ namespace OSSimulators {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	sjf^ sjf_form = gcnew sjf();
+	dpp^ dpp_form = gcnew dpp();
 
 	protected:
 
@@ -161,6 +163,10 @@ namespace OSSimulators {
 		}
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!dpp_form->Visible)
+		{
+			dpp_form->Show();
+		}
 	}
 };
 }

@@ -24,6 +24,9 @@
     <ClCompile Include="GanttChart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Index.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GanttChart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dpp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
