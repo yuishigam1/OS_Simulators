@@ -27,6 +27,12 @@
     <ClCompile Include="dpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyUserControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="My.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Index.h">
@@ -42,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dpp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="My.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
