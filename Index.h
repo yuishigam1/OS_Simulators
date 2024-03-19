@@ -2,6 +2,7 @@
 #include "sjf.h"
 #include "dpp.h"
 #include "My.h"
+#include "CLook.h"
 
 namespace OSSimulators {
 
@@ -47,6 +48,8 @@ namespace OSSimulators {
 	sjf^ sjf_form = gcnew sjf();
 	dpp^ dpp_form = gcnew dpp();
 	My^ fifo_form = gcnew My();
+	CLook^ cLook_form = gcnew CLook();
+
 
 	protected:
 
@@ -121,6 +124,7 @@ namespace OSSimulators {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"C-Look disk scheduling algorithm ";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Index::button3_Click);
 			// 
 			// button4
 			// 
@@ -172,11 +176,17 @@ namespace OSSimulators {
 		}
 	}
 
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!fifo_form->Visible)
-	{
-		fifo_form->Show();
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!fifo_form->Visible)
+		{
+			fifo_form->Show();
+		}
 	}
-}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!cLook_form->Visible)
+		{
+			cLook_form->Show();
+		}
+	}
 };
 }

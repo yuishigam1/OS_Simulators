@@ -121,6 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLook.cpp" />
     <ClCompile Include="dpp.cpp" />
     <ClCompile Include="GanttChart.cpp" />
     <ClCompile Include="Index.cpp" />
@@ -129,6 +130,10 @@
     <ClCompile Include="sjf.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLook.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CLookAlgo.h" />
     <ClInclude Include="dpp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -147,6 +152,9 @@
     <ClInclude Include="SjfComponents.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CLook.resx">
+      <DependentUpon>CLook.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dpp.resx">
       <DependentUpon>dpp.h</DependentUpon>
     </EmbeddedResource>

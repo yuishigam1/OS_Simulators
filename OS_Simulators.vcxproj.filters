@@ -27,10 +27,14 @@
     <ClCompile Include="dpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="MyUserControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="My.cpp">
+=======
+    <ClCompile Include="CLook.cpp">
+>>>>>>> d518998a8ad0b44dd48d3840c01aba96d70cb8f6
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +54,14 @@
     <ClInclude Include="dpp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="My.h">
+=======
+    <ClInclude Include="CLookAlgo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLook.h">
+>>>>>>> d518998a8ad0b44dd48d3840c01aba96d70cb8f6
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
