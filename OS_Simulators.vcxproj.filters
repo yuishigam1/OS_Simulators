@@ -27,6 +27,7 @@
     <ClCompile Include="dpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <ClCompile Include="MyUserControl.cpp">
       <Filter>Source Files</Filter>
@@ -35,6 +36,9 @@
 =======
     <ClCompile Include="CLook.cpp">
 >>>>>>> d518998a8ad0b44dd48d3840c01aba96d70cb8f6
+=======
+    <ClCompile Include="dppVisual.cpp">
+>>>>>>> Stashed changes
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,6 +58,7 @@
     <ClInclude Include="dpp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <ClInclude Include="My.h">
 =======
@@ -62,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="CLook.h">
 >>>>>>> d518998a8ad0b44dd48d3840c01aba96d70cb8f6
+=======
+    <ClInclude Include="dppVisual.h">
+>>>>>>> Stashed changes
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

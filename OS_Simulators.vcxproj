@@ -80,7 +80,8 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
@@ -123,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="CLook.cpp" />
     <ClCompile Include="dpp.cpp" />
+    <ClCompile Include="dppVisual.cpp" />
     <ClCompile Include="GanttChart.cpp" />
     <ClCompile Include="Index.cpp" />
     <ClCompile Include="My.cpp" />
@@ -135,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="CLookAlgo.h" />
     <ClInclude Include="dpp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="dppVisual.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GanttChart.h">
@@ -158,11 +163,15 @@
     <EmbeddedResource Include="dpp.resx">
       <DependentUpon>dpp.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dppVisual.resx">
+      <DependentUpon>dppVisual.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GanttChart.resx">
       <DependentUpon>GanttChart.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My.resx">
       <DependentUpon>My.h</DependentUpon>

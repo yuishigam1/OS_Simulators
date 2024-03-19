@@ -173,6 +173,7 @@ namespace OSSimulators {
 		if (!dpp_form->Visible)
 		{
 			dpp_form->Show();
+			this->Hide();
 		}
 	}
 
