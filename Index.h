@@ -1,6 +1,7 @@
 #pragma once
 #include "sjf.h"
 #include "dpp.h"
+#include "CLook.h"
 
 namespace OSSimulators {
 
@@ -45,6 +46,7 @@ namespace OSSimulators {
 	private: System::Windows::Forms::Button^ button4;
 	sjf^ sjf_form = gcnew sjf();
 	dpp^ dpp_form = gcnew dpp();
+	CLook^ cLook_form = gcnew CLook();
 
 	protected:
 
@@ -78,10 +80,10 @@ namespace OSSimulators {
 			this->sjf_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->sjf_btn->ForeColor = System::Drawing::Color::Gold;
-			this->sjf_btn->Location = System::Drawing::Point(7, 37);
-			this->sjf_btn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->sjf_btn->Location = System::Drawing::Point(9, 46);
+			this->sjf_btn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->sjf_btn->Name = L"sjf_btn";
-			this->sjf_btn->Size = System::Drawing::Size(499, 54);
+			this->sjf_btn->Size = System::Drawing::Size(665, 66);
 			this->sjf_btn->TabIndex = 0;
 			this->sjf_btn->Text = L"Shortest Job First (SJF) scheduling algorithm ";
 			this->sjf_btn->UseVisualStyleBackColor = false;
@@ -95,10 +97,10 @@ namespace OSSimulators {
 			this->dp_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dp_btn->ForeColor = System::Drawing::Color::Gold;
-			this->dp_btn->Location = System::Drawing::Point(7, 116);
-			this->dp_btn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dp_btn->Location = System::Drawing::Point(9, 143);
+			this->dp_btn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dp_btn->Name = L"dp_btn";
-			this->dp_btn->Size = System::Drawing::Size(499, 52);
+			this->dp_btn->Size = System::Drawing::Size(665, 64);
 			this->dp_btn->TabIndex = 1;
 			this->dp_btn->Text = L"Dining philosophers’ problem with semaphore";
 			this->dp_btn->UseVisualStyleBackColor = false;
@@ -112,13 +114,14 @@ namespace OSSimulators {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Gold;
-			this->button3->Location = System::Drawing::Point(7, 192);
-			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button3->Location = System::Drawing::Point(9, 236);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(499, 52);
+			this->button3->Size = System::Drawing::Size(665, 64);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"C-Look disk scheduling algorithm ";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Index::button3_Click);
 			// 
 			// button4
 			// 
@@ -128,27 +131,27 @@ namespace OSSimulators {
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::Color::Gold;
-			this->button4->Location = System::Drawing::Point(7, 260);
-			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button4->Location = System::Drawing::Point(9, 320);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(499, 52);
+			this->button4->Size = System::Drawing::Size(665, 64);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"First-in first-out (FIFO) page replacement algorithm";
 			this->button4->UseVisualStyleBackColor = false;
 			// 
 			// Index
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(514, 332);
+			this->ClientSize = System::Drawing::Size(685, 409);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->dp_btn);
 			this->Controls->Add(this->sjf_btn);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Index";
 			this->Text = L"OS Simulator";
 			this->ResumeLayout(false);
@@ -168,5 +171,11 @@ namespace OSSimulators {
 			dpp_form->Show();
 		}
 	}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!cLook_form->Visible)
+	{
+		cLook_form->Show();
+	}
+}
 };
 }

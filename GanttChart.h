@@ -65,7 +65,7 @@ namespace OSSimulators {
 			{
 				String^ name = sjf_components->processName[i];
 				int startX = preX;
-				int endX = startX + sjf_components->burstTime[i] * 10;
+				int endX = startX + sjf_components->burstTime[i] * 20;
 				int width = endX - startX;
 
 
