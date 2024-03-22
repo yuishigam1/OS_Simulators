@@ -77,9 +77,10 @@ namespace OSSimulators {
 			// 
 			this->Submit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Submit->Location = System::Drawing::Point(140, 64);
+			this->Submit->Location = System::Drawing::Point(105, 52);
+			this->Submit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Submit->Name = L"Submit";
-			this->Submit->Size = System::Drawing::Size(100, 36);
+			this->Submit->Size = System::Drawing::Size(75, 29);
 			this->Submit->TabIndex = 0;
 			this->Submit->Text = L"Submit";
 			this->Submit->UseVisualStyleBackColor = true;
@@ -89,9 +90,10 @@ namespace OSSimulators {
 			// 
 			this->NoOfPhilo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NoOfPhilo->Location = System::Drawing::Point(17, 67);
+			this->NoOfPhilo->Location = System::Drawing::Point(13, 54);
+			this->NoOfPhilo->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->NoOfPhilo->Name = L"NoOfPhilo";
-			this->NoOfPhilo->Size = System::Drawing::Size(100, 30);
+			this->NoOfPhilo->Size = System::Drawing::Size(76, 26);
 			this->NoOfPhilo->TabIndex = 1;
 			// 
 			// l1
@@ -99,9 +101,10 @@ namespace OSSimulators {
 			this->l1->AutoSize = true;
 			this->l1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->l1->Location = System::Drawing::Point(12, 22);
+			this->l1->Location = System::Drawing::Point(9, 18);
+			this->l1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->l1->Name = L"l1";
-			this->l1->Size = System::Drawing::Size(228, 25);
+			this->l1->Size = System::Drawing::Size(186, 20);
 			this->l1->TabIndex = 2;
 			this->l1->Text = L"Enter no of philoshopers:";
 			// 
@@ -116,10 +119,11 @@ namespace OSSimulators {
 					this->AT
 			});
 			this->dataGridView1->EditMode = System::Windows::Forms::DataGridViewEditMode::EditOnEnter;
-			this->dataGridView1->Location = System::Drawing::Point(12, 181);
+			this->dataGridView1->Location = System::Drawing::Point(9, 147);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(356, 295);
+			this->dataGridView1->Size = System::Drawing::Size(267, 240);
 			this->dataGridView1->TabIndex = 3;
 			// 
 			// Philoshoper
@@ -144,9 +148,10 @@ namespace OSSimulators {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(17, 121);
+			this->button1->Location = System::Drawing::Point(13, 98);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 35);
+			this->button1->Size = System::Drawing::Size(75, 28);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Set AT";
 			this->button1->UseVisualStyleBackColor = true;
@@ -154,14 +159,15 @@ namespace OSSimulators {
 			// 
 			// dpp
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(380, 505);
+			this->ClientSize = System::Drawing::Size(285, 410);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->l1);
 			this->Controls->Add(this->NoOfPhilo);
 			this->Controls->Add(this->Submit);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"dpp";
 			this->Text = L"dpp";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -196,11 +202,6 @@ namespace OSSimulators {
 				array[i] = i;
 				i++;
 			}
-		}
-		while (i < N)
-		{
-			array[i] = i;
-			i++;
 		}
 		dppVisual^ dpp_form = gcnew dppVisual(array,N);
 		dpp_form->Show();

@@ -1,100 +1,96 @@
 #pragma once
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <map>
+#include <string>
+#include <msclr/marshal_cppstd.h> // Required for string conversion
+
 namespace OSSimulators {
-	
-	using namespace std;
-	using namespace System;
-	using namespace System::ComponentModel;
-	using namespace System::Collections;
-	using namespace System::Windows::Forms;
-	using namespace System::Data;
-	using namespace System::Drawing;
 
-	/// <summary>
-	/// Summary for dppVisual
-	/// </summary>
-	public ref class dppVisual : public System::Windows::Forms::Form
-	{
-	public:
-		int* A,N;
-		dppVisual(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
-		dppVisual(int *array,int size)
-		{
-			InitializeComponent();
-			A = array;
-			N = size;
-		}
+    using namespace System;
+    using namespace System::Windows::Forms;
+    using namespace System::Threading;
+    using namespace std::chrono;
 
-	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~dppVisual()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
-	private: System::Windows::Forms::TextBox^ textBox1;
-	protected:
+    public ref class dppVisual : public Form {
+    public:
+        dppVisual(int* arrivalTimes, int size) {
+            InitializeComponent();
+            A = arrivalTimes;
+            N = size;
 
-	protected:
+            StartSimulation();
+        }
 
-	protected:
+    protected:
+        ~dppVisual() {
+            if (components) {
+                delete components;
+            }
+        }
 
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+    private:
+        int* A;
+        int N;
 
-#pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		void InitializeComponent(void)
-		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->SuspendLayout();
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(0, 0);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(399, 481);
-			this->textBox1->TabIndex = 0;
-			// 
-			// dppVisual
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(400, 479);
-			this->Controls->Add(this->textBox1);
-			this->Name = L"dppVisual";
-			this->Text = L"dppVisual";
-			this->Load += gcnew System::EventHandler(this, &dppVisual::dppVisual_Load);
-			this->ResumeLayout(false);
-			this->PerformLayout();
+        TextBox^ textBox1;
+        System::ComponentModel::Container^ components; // Add this line
 
-		}
-#pragma endregion
-	private: System::Void dppVisual_Load(System::Object^ sender, System::EventArgs^ e) {
-		textBox1->Text = System::Convert::ToString(N);
-		int i = 0;
-		std::sort();
-	}
-	};
+        void InitializeComponent(void) {
+            this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+            this->SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this->textBox1->BackColor = System::Drawing::SystemColors::InactiveBorder;
+            this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->textBox1->Location = System::Drawing::Point(0, 0);
+            this->textBox1->Multiline = true;
+            this->textBox1->Name = L"textBox1";
+            this->textBox1->Size = System::Drawing::Size(300, 392);
+            this->textBox1->TabIndex = 0;
+            // 
+            // dppVisual
+            // 
+            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+            this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+            this->ClientSize = System::Drawing::Size(300, 389);
+            this->Controls->Add(this->textBox1);
+            this->Name = L"dppVisual";
+            this->Text = L"dppVisual";
+            this->ResumeLayout(false);
+            this->PerformLayout();
+        }
+
+        void StartSimulation() {
+            for (int i = 0; i < N; ++i) {
+                int arrivalTime = A[i];
+                String^ philosopherName = "p" + (i + 1);
+                UpdateTextBox("Philosopher " + philosopherName + " has arrived.\r\n");
+
+                // Start a new thread for each philosopher
+                Thread^ philosopherThread = gcnew Thread(gcnew ParameterizedThreadStart(this, &dppVisual::SimulatePhilosopherActivity));
+                philosopherThread->Start(philosopherName+"  "+ System::Convert::ToString(arrivalTime));
+            }
+        }
+
+        void SimulatePhilosopherActivity(Object^ data) {
+            array<Object^>^ params = safe_cast<array<Object^>^>(data);
+            String^ philosopherName = safe_cast<String^>(params[0]);
+            int arrivalTime = safe_cast<int>(params[1]);
+
+            System::Threading::Thread::Sleep(arrivalTime * 1000);
+
+            UpdateTextBox("Philosopher " + philosopherName + " is eating.\r\n");
+            System::Threading::Thread::Sleep(1000); // Simulate eating time
+
+            UpdateTextBox("Philosopher " + philosopherName + " has finished eating.\r\n");
+        }
+
+        void UpdateTextBox(String^ newText) {
+                this->textBox1->AppendText(newText);
+        }
+    };
 }
