@@ -66,7 +66,6 @@ namespace OSSimulators {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Index::typeid));
 			this->sjf_btn = (gcnew System::Windows::Forms::Button());
 			this->dp_btn = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -77,7 +76,7 @@ namespace OSSimulators {
 			// 
 			this->sjf_btn->BackColor = System::Drawing::Color::Transparent;
 			this->sjf_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->sjf_btn->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->sjf_btn->FlatAppearance->BorderColor = System::Drawing::Color::Gold;
 			this->sjf_btn->FlatAppearance->BorderSize = 2;
 			this->sjf_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->sjf_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -95,7 +94,7 @@ namespace OSSimulators {
 			// dp_btn
 			// 
 			this->dp_btn->BackColor = System::Drawing::Color::Transparent;
-			this->dp_btn->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->dp_btn->FlatAppearance->BorderColor = System::Drawing::Color::Gold;
 			this->dp_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->dp_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -112,7 +111,7 @@ namespace OSSimulators {
 			// button3
 			// 
 			this->button3->BackColor = System::Drawing::Color::Transparent;
-			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::Gold;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -129,7 +128,7 @@ namespace OSSimulators {
 			// button4
 			// 
 			this->button4->BackColor = System::Drawing::Color::Transparent;
-			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::DarkSeaGreen;
+			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::Gold;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -147,8 +146,7 @@ namespace OSSimulators {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(685, 409);
 			this->Controls->Add(this->button4);

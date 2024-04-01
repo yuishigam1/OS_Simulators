@@ -55,79 +55,93 @@ namespace OSSimulators {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-            this->textBoxPageSequence = (gcnew System::Windows::Forms::TextBox());
-            this->label1 = (gcnew System::Windows::Forms::Label());
-            this->textBoxCapacity = (gcnew System::Windows::Forms::TextBox());
-            this->label2 = (gcnew System::Windows::Forms::Label());
-            this->buttonCalculate = (gcnew System::Windows::Forms::Button());
-            this->labelOutput = (gcnew System::Windows::Forms::Label());
-            this->SuspendLayout();
-            // 
-            // textBoxPageSequence
-            // 
-            this->textBoxPageSequence->Location = System::Drawing::Point(142, 28);
-            this->textBoxPageSequence->Name = L"textBoxPageSequence";
-            this->textBoxPageSequence->Size = System::Drawing::Size(100, 20);
-            this->textBoxPageSequence->TabIndex = 0;
-            // 
-            // label1
-            // 
-            this->label1->AutoSize = true;
-            this->label1->Location = System::Drawing::Point(44, 31);
-            this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(85, 13);
-            this->label1->TabIndex = 1;
-            this->label1->Text = L"Page Sequence";
-            // 
-            // textBoxCapacity
-            // 
-            this->textBoxCapacity->Location = System::Drawing::Point(142, 67);
-            this->textBoxCapacity->Name = L"textBoxCapacity";
-            this->textBoxCapacity->Size = System::Drawing::Size(100, 20);
-            this->textBoxCapacity->TabIndex = 2;
-            // 
-            // label2
-            // 
-            this->label2->AutoSize = true;
-            this->label2->Location = System::Drawing::Point(44, 70);
-            this->label2->Name = L"label2";
-            this->label2->Size = System::Drawing::Size(86, 13);
-            this->label2->TabIndex = 3;
-            this->label2->Text = L"Memory Capacity";
-            // 
-            // buttonCalculate
-            // 
-            this->buttonCalculate->Location = System::Drawing::Point(95, 106);
-            this->buttonCalculate->Name = L"buttonCalculate";
-            this->buttonCalculate->Size = System::Drawing::Size(75, 23);
-            this->buttonCalculate->TabIndex = 4;
-            this->buttonCalculate->Text = L"Calculate";
-            this->buttonCalculate->UseVisualStyleBackColor = true;
-            this->buttonCalculate->Click += gcnew System::EventHandler(this, &My::buttonCalculate_Click);
-            // 
-            // labelOutput
-            // 
-            this->labelOutput->AutoSize = true;
-            this->labelOutput->Location = System::Drawing::Point(44, 147);
-            this->labelOutput->Name = L"labelOutput";
-            this->labelOutput->Size = System::Drawing::Size(0, 13);
-            this->labelOutput->TabIndex = 5;
-            // 
-            // MyForm1
-            // 
-            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-            this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-            this->ClientSize = System::Drawing::Size(284, 186);
-            this->Controls->Add(this->labelOutput);
-            this->Controls->Add(this->buttonCalculate);
-            this->Controls->Add(this->label2);
-            this->Controls->Add(this->textBoxCapacity);
-            this->Controls->Add(this->label1);
-            this->Controls->Add(this->textBoxPageSequence);
-            this->Name = L"MyForm1";
-            this->Text = L"MyForm1";
-            this->ResumeLayout(false);
-            this->PerformLayout();
+			this->textBoxPageSequence = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBoxCapacity = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->buttonCalculate = (gcnew System::Windows::Forms::Button());
+			this->labelOutput = (gcnew System::Windows::Forms::Label());
+			this->SuspendLayout();
+			// 
+			// textBoxPageSequence
+			// 
+			this->textBoxPageSequence->BackColor = System::Drawing::Color::Black;
+			this->textBoxPageSequence->ForeColor = System::Drawing::Color::Gold;
+			this->textBoxPageSequence->Location = System::Drawing::Point(143, 15);
+			this->textBoxPageSequence->Margin = System::Windows::Forms::Padding(4);
+			this->textBoxPageSequence->Name = L"textBoxPageSequence";
+			this->textBoxPageSequence->Size = System::Drawing::Size(132, 22);
+			this->textBoxPageSequence->TabIndex = 0;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(13, 19);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(105, 16);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Page Sequence";
+			// 
+			// textBoxCapacity
+			// 
+			this->textBoxCapacity->BackColor = System::Drawing::Color::Black;
+			this->textBoxCapacity->ForeColor = System::Drawing::Color::Gold;
+			this->textBoxCapacity->Location = System::Drawing::Point(143, 63);
+			this->textBoxCapacity->Margin = System::Windows::Forms::Padding(4);
+			this->textBoxCapacity->Name = L"textBoxCapacity";
+			this->textBoxCapacity->Size = System::Drawing::Size(132, 22);
+			this->textBoxCapacity->TabIndex = 2;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(13, 67);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(112, 16);
+			this->label2->TabIndex = 3;
+			this->label2->Text = L"Memory Capacity";
+			// 
+			// buttonCalculate
+			// 
+			this->buttonCalculate->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonCalculate->Location = System::Drawing::Point(13, 107);
+			this->buttonCalculate->Margin = System::Windows::Forms::Padding(4);
+			this->buttonCalculate->Name = L"buttonCalculate";
+			this->buttonCalculate->Size = System::Drawing::Size(262, 28);
+			this->buttonCalculate->TabIndex = 4;
+			this->buttonCalculate->Text = L"Calculate";
+			this->buttonCalculate->UseVisualStyleBackColor = true;
+			this->buttonCalculate->Click += gcnew System::EventHandler(this, &My::buttonCalculate_Click);
+			// 
+			// labelOutput
+			// 
+			this->labelOutput->AutoSize = true;
+			this->labelOutput->Location = System::Drawing::Point(59, 181);
+			this->labelOutput->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelOutput->Name = L"labelOutput";
+			this->labelOutput->Size = System::Drawing::Size(0, 16);
+			this->labelOutput->TabIndex = 5;
+			// 
+			// My
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::Black;
+			this->ClientSize = System::Drawing::Size(298, 157);
+			this->Controls->Add(this->labelOutput);
+			this->Controls->Add(this->buttonCalculate);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->textBoxCapacity);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->textBoxPageSequence);
+			this->ForeColor = System::Drawing::Color::Gold;
+			this->Margin = System::Windows::Forms::Padding(4);
+			this->Name = L"My";
+			this->Text = L"MyForm1";
+			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -148,8 +162,7 @@ namespace OSSimulators {
                      visited[page] = true;
                  }
              }
-
-             labelOutput->Text = "Total Page Faults: " + pageFaults;
+			 MessageBox::Show("Total Page Faults: " + pageFaults, "", MessageBoxButtons::OK);
          }
 
          System::Void buttonCalculate_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -169,5 +182,7 @@ namespace OSSimulators {
                  labelOutput->Text = "Invalid capacity input.";
              }
          }
-    };
+
+
+};
 }

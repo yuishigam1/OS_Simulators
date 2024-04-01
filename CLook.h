@@ -84,6 +84,8 @@ namespace OSSimulators {
 			// 
 			// textBox1
 			// 
+			this->textBox1->BackColor = System::Drawing::Color::Black;
+			this->textBox1->ForeColor = System::Drawing::Color::Gold;
 			this->textBox1->Location = System::Drawing::Point(174, 26);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 22);
@@ -100,6 +102,8 @@ namespace OSSimulators {
 			// 
 			// textBox2
 			// 
+			this->textBox2->BackColor = System::Drawing::Color::Black;
+			this->textBox2->ForeColor = System::Drawing::Color::Gold;
 			this->textBox2->Location = System::Drawing::Point(174, 70);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 22);
@@ -125,7 +129,10 @@ namespace OSSimulators {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->BackColor = System::Drawing::Color::Black;
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox1->ForeColor = System::Drawing::Color::Gold;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"LEFT", L"RIGHT" });
 			this->comboBox1->Location = System::Drawing::Point(15, 189);
@@ -136,8 +143,10 @@ namespace OSSimulators {
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button1->BackColor = System::Drawing::Color::Black;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::Gold;
+			this->button1->FlatAppearance->BorderSize = 2;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Location = System::Drawing::Point(12, 229);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(262, 35);
@@ -148,6 +157,8 @@ namespace OSSimulators {
 			// 
 			// textBox3
 			// 
+			this->textBox3->BackColor = System::Drawing::Color::Black;
+			this->textBox3->ForeColor = System::Drawing::Color::Gold;
 			this->textBox3->Location = System::Drawing::Point(174, 113);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
@@ -159,6 +170,7 @@ namespace OSSimulators {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::Black;
 			this->ClientSize = System::Drawing::Size(287, 287);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->button1);
@@ -169,6 +181,7 @@ namespace OSSimulators {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->ForeColor = System::Drawing::Color::Gold;
 			this->Name = L"CLook";
 			this->Text = L"CLook";
 			this->ResumeLayout(false);

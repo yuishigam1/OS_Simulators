@@ -56,6 +56,12 @@ namespace OSSimulators {
 
 
 
+
+
+
+
+
+
 	protected:
 
 
@@ -75,52 +81,112 @@ namespace OSSimulators {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->ProcessName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ArrivalTime = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->BurstTime = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
 			// 
-			dataGridViewCellStyle11->NullValue = nullptr;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::Gold;
+			dataGridViewCellStyle1->NullValue = nullptr;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			dataGridViewCellStyle12->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle12->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle12->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle12->Format = L"N2";
-			dataGridViewCellStyle12->NullValue = L"0";
-			dataGridViewCellStyle12->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle12->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle12->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle2->BackColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::Color::Gold;
+			dataGridViewCellStyle2->Format = L"N2";
+			dataGridViewCellStyle2->NullValue = L"0";
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
 				this->ProcessName,
 					this->ArrivalTime, this->BurstTime
 			});
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle4->BackColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle4->ForeColor = System::Drawing::Color::Gold;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle4;
+			this->dataGridView1->GridColor = System::Drawing::Color::Gold;
 			this->dataGridView1->Location = System::Drawing::Point(12, 54);
 			this->dataGridView1->Name = L"dataGridView1";
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle5->BackColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle5->ForeColor = System::Drawing::Color::Gold;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 51;
+			dataGridViewCellStyle6->BackColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle6->ForeColor = System::Drawing::Color::Gold;
+			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle6;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(651, 244);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->TabStop = false;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Calligraphy", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(12, 20);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(174, 23);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Enter Parameters";
+			// 
+			// button1
+			// 
+			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->button1->BackColor = System::Drawing::Color::Black;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(12, 317);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(651, 31);
+			this->button1->TabIndex = 2;
+			this->button1->Text = L"GO";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &sjf::button1_Click);
+			// 
 			// ProcessName
 			// 
 			this->ProcessName->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			dataGridViewCellStyle3->BackColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle3->ForeColor = System::Drawing::Color::Gold;
+			this->ProcessName->DefaultCellStyle = dataGridViewCellStyle3;
 			this->ProcessName->HeaderText = L"Process Name";
 			this->ProcessName->MinimumWidth = 6;
 			this->ProcessName->Name = L"ProcessName";
@@ -140,43 +206,23 @@ namespace OSSimulators {
 			this->BurstTime->MinimumWidth = 6;
 			this->BurstTime->Name = L"BurstTime";
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(12, 20);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(111, 16);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Enter Parameters";
-			// 
-			// button1
-			// 
-			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(12, 317);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(651, 31);
-			this->button1->TabIndex = 2;
-			this->button1->Text = L"GO";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &sjf::button1_Click);
-			// 
 			// sjf
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
+			this->BackColor = System::Drawing::Color::Black;
 			this->ClientSize = System::Drawing::Size(675, 360);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
+			this->ForeColor = System::Drawing::Color::Gold;
 			this->Name = L"sjf";
 			this->Text = L"Shortest Job First (SJF)";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 
@@ -280,5 +326,6 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 
 }
+
 };
 }
