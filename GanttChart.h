@@ -53,14 +53,14 @@ namespace OSSimulators {
 		virtual void OnPaint(PaintEventArgs^ e) override
 		{
 			Graphics^ g = e->Graphics;
-			Pen^ pen = gcnew Pen(Color::Black);
+			Pen^ pen = gcnew Pen(Color::Gold);
 
 			sjf_components->sort();
 			int startY = 50; // Initial Y position of the tasks
 			int height = 50; // Height of each task
 			int preX = 50;
 			// Draw tasks
-			g->DrawString(Convert::ToString(sjf_components->arrivalTime[0]), gcnew Drawing::Font("Arial", 10), Brushes::Black, 45, startY + height + 10);
+			g->DrawString(Convert::ToString(sjf_components->arrivalTime[0]), gcnew Drawing::Font("Arial", 10), Brushes::Gold, 45, startY + height + 10);
 			for(int i = 0; i < sjf_components->size; i++)
 			{
 				String^ name = sjf_components->processName[i];
@@ -75,14 +75,14 @@ namespace OSSimulators {
 				g->DrawLine(pen, endX, startY + height, endX, startY + height + 10); // End line
 
 				// Draw task name
-				g->DrawString(name, gcnew Drawing::Font("Arial", 10), Brushes::Black, startX + 5, startY + 5);
+				g->DrawString(name, gcnew Drawing::Font("Arial", 10), Brushes::Gold, startX + 5, startY + 5);
 				if (Convert::ToString(sjf_components->completionTime[i])->Length == 1) {
 
-					g->DrawString(Convert::ToString(sjf_components->completionTime[i]), gcnew Drawing::Font("Arial", 10), Brushes::Black, endX - 5, startY + height + 10);
+					g->DrawString(Convert::ToString(sjf_components->completionTime[i]), gcnew Drawing::Font("Arial", 10), Brushes::Gold, endX - 5, startY + height + 10);
 				}
 				else
 				{
-					g->DrawString(Convert::ToString(sjf_components->completionTime[i]), gcnew Drawing::Font("Arial", 10), Brushes::Black, endX - 10, startY + height + 10);
+					g->DrawString(Convert::ToString(sjf_components->completionTime[i]), gcnew Drawing::Font("Arial", 10), Brushes::Gold, endX - 10, startY + height + 10);
 				}
 
 				preX = endX;
@@ -107,6 +107,7 @@ namespace OSSimulators {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::Black;
 			this->ClientSize = System::Drawing::Size(643, 334);
 			this->Name = L"GanttChart";
 			this->Text = L"GanttChart";
