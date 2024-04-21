@@ -115,8 +115,6 @@ namespace OSSimulators {
                 UpdateRichTextBox("All philosophers have finished eating. Simulation complete.\r\n", Color::Blue);
             }
         }
-
-
         void UpdateRichTextBox(String^ newText, Color textColor) {
             this->richTextBox1->SelectionColor = textColor;
             this->richTextBox1->AppendText(newText);
